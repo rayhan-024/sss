@@ -22,8 +22,10 @@ from django.conf.urls.static import static
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', include('myapp2.urls', namespace = 'myapp2')),
-    path('album/', include('album.urls', namespace = 'album'))
+    path('myapp/', include('myapp2.urls', namespace = 'myapp2')),
+    path('', include('blog.urls', namespace = 'blog')),
+    path('album/', include('album.urls', namespace = 'album')),
+    path('summernote/', include('django_summernote.urls'))
 ]
 
 if settings.DEBUG : 

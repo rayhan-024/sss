@@ -41,8 +41,14 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'myapp2',
     'album',
-    'storages'
+    'blog',
+    'taggit',
+    # 'storages',
 ]
+
+
+INSTALLED_APPS += ('django_summernote', )
+
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
@@ -128,17 +134,17 @@ USE_TZ = True
 STATIC_URL = '/static/'
 STATICFILES_DIRS = [BASE_DIR / 'static']
 STATIC_ROOT = BASE_DIR / 'staticfiles'
-STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
+# STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
 
 MEDIA_URL = '/media/'
 MEDIA_ROOT = BASE_DIR / 'media/'
-AWS_ACCESS_KEY_ID = 'AKIARVGPJVYVETNTS5YQ'
-AWS_SECRET_ACCESS_KEY = '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'
-AWS_STORAGE_BUCKET_NAME = 'nasim.secpstorage'
-AWS_S3_FILE_OVERWRITE = False
-AWS_DEFAULT_ACL = None
-DEFAULT_FILE_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
+# AWS_ACCESS_KEY_ID = 'AKIARVGPJVYVETNTS5YQ'
+# AWS_SECRET_ACCESS_KEY = '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'
+# AWS_STORAGE_BUCKET_NAME = 'nasim.secpstorage'
+# AWS_S3_FILE_OVERWRITE = False
+# AWS_DEFAULT_ACL = None
+# DEFAULT_FILE_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
 
 
 
@@ -147,4 +153,6 @@ DEFAULT_FILE_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
+
+X_FRAME_OPTIONS = 'SAMEORIGIN'
 django_heroku.settings(locals())
