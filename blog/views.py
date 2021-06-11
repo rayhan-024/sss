@@ -20,7 +20,7 @@ def blog_list(request):
     
     latest_post = Post.objects.all()[:3]
 
-    paginator = Paginator(posts, 4)
+    paginator = Paginator(posts, 2)
     page_number = request.GET.get('page')
     page_obj = paginator.get_page(page_number)
     
