@@ -24,8 +24,7 @@ def blog_list(request):
     page_number = request.GET.get('page')
     page_obj = paginator.get_page(page_number)
     
- 
-    
+
     context = {
        'posts': posts,
        'latest_post': latest_post,
