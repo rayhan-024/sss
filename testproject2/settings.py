@@ -1,7 +1,7 @@
 
 import os
-# import django_heroku
-# import dj_database_url
+import django_heroku
+import dj_database_url
 from pathlib import Path
 
 
@@ -158,6 +158,7 @@ DEFAULT_FILE_STORAGE = 'cloudinary_storage.storage.MediaCloudinaryStorage'
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
+heroku config:set DISABLE_COLLECTSTATIC=1
 
 X_FRAME_OPTIONS = 'SAMEORIGIN'
 django_heroku.settings(locals())
